@@ -4,186 +4,175 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Collector Gian · Pokémon TCG Buy · Sell · Trade</title>
-  <meta name="description" content="Collector Gian — Pokémon cards bought, sold and traded. Graded slabs, sealed product, singles, recent deals and upcoming card shows." />
+  <meta name="description" content="Collector Gian — Miami's Pokémon card vendor. Graded slabs, sealed product, singles, recent deals and upcoming card shows." />
   <meta property="og:title" content="Collector Gian · Pokémon TCG" />
-  <meta property="og:description" content="Graded slabs, sealed product & singles. Buy · Sell · Trade." />
-  <meta name="theme-color" content="#0b0d1a" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect x='12' y='4' width='40' height='56' rx='6' fill='%23ffcb05'/><rect x='17' y='9' width='30' height='22' rx='3' fill='%23e3350d'/><text x='32' y='50' font-size='14' font-family='Arial' font-weight='900' text-anchor='middle' fill='%230b0d1a'>CG</text></svg>" />
+  <meta property="og:description" content="Graded slabs, sealed product & singles out of Miami. Buy · Sell · Trade." />
+  <meta name="theme-color" content="#07060f" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect x='12' y='4' width='40' height='56' rx='7' fill='%23ffcb05'/><rect x='17' y='9' width='30' height='46' rx='4' fill='%236d28d9'/><text x='32' y='39' font-size='17' font-family='Arial' font-weight='900' text-anchor='middle' fill='%23ffcb05'>CG</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Press+Start+2P&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="glow" id="glow" aria-hidden="true"></div>
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="progress" id="progress"></div>
 
   <header class="nav" id="top">
-    <a class="brand" href="#top">
-      <span class="brand-mark">CG</span>
-      <span class="brand-text">Collector<b>Gian</b></span>
-    </a>
+    <a class="brand" href="#top"><span class="brand-mark">CG</span><span>Collector<b>Gian</b></span></a>
     <nav class="nav-links" id="navLinks">
       <a href="#listings">Listings</a>
-      <a href="#deals">Recent Deals</a>
+      <a href="#deals">Deals</a>
       <a href="#events">Events</a>
       <a href="#sell">Sell to Me</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="btn btn-primary btn-sm nav-cta" data-ig-dm href="#">DM on Instagram</a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span></button>
+    <button class="shiny-btn" id="shinyBtn" title="Shiny mode" aria-label="Toggle shiny mode">✨</button>
+    <a class="btn btn-gold btn-sm nav-cta" data-ig-dm href="#">DM Gian</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span></button>
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow pixel">▶ NOW TRADING</p>
-        <h1>Rare pulls.<br/><span class="grad-text">Fair deals.</span><br/>Real collectors.</h1>
-        <p class="lead">Graded slabs, sealed product and chase singles — bought, sold and traded by <b>@collectorgian</b>. Every card verified, every deal done right.</p>
-        <div class="hero-actions">
-          <a href="#listings" class="btn btn-primary">Shop Listings</a>
-          <a href="#sell" class="btn btn-ghost">Sell Your Collection</a>
+        <a class="tag" href="#events" id="heroTag"><i class="dot"></i><span>Miami, FL</span></a>
+        <h1>
+          <span class="line"><span>Rare pulls.</span></span>
+          <span class="line"><span class="holo-text">Fair deals.</span></span>
+          <span class="line"><span>Real collector.</span></span>
+        </h1>
+        <p class="lead">Graded slabs, sealed product and chase singles — bought, sold and traded by <b>@collectorgian</b>. Catch the table at South Florida's biggest card shows.</p>
+        <div class="actions">
+          <a href="#listings" class="btn btn-gold">Shop the case</a>
+          <a href="#sell" class="btn btn-glass">Sell your collection</a>
         </div>
-        <div class="trust">
-          <span>✓ Authenticity guaranteed</span>
-          <span>✓ Same-day shipping</span>
-          <span>✓ Local meetups</span>
-        </div>
+        <ul class="trust">
+          <li>Authentic, always</li><li>Local Miami meetups</li><li>Tracked &amp; insured shipping</li>
+        </ul>
       </div>
-      <div class="hero-cards" id="heroCards" aria-hidden="true"></div>
+
+      <div class="stage" id="stage">
+        <div class="rings" aria-hidden="true"><i></i><i></i><i></i></div>
+        <button class="pack" id="pack" aria-label="Rip open a pack to reveal featured cards">
+          <span class="pack-top"></span>
+          <span class="pack-body">
+            <span class="pack-logo">CG</span>
+            <span class="pack-name">COLLECTOR GIAN</span>
+            <span class="pack-sub">FEATURED PULLS · 3 CARDS</span>
+            <span class="pack-bolt">✦</span>
+          </span>
+          <span class="pack-sheen"></span>
+        </button>
+        <div class="pulls" id="pulls"></div>
+        <div class="flash" aria-hidden="true"></div>
+        <button class="pack-hint" id="packHint">👆 Tap the pack to rip it open</button>
+      </div>
     </section>
 
-    <!-- STATS -->
-    <section class="stats" id="stats"></section>
+    <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
 
-    <!-- LISTINGS -->
-    <section class="section" id="listings">
-      <div class="section-head">
+    <section class="stats wrap" id="stats"></section>
+
+    <section class="wrap" id="next"></section>
+
+    <section class="section wrap" id="listings">
+      <div class="head">
         <div>
-          <p class="eyebrow pixel">01 · INVENTORY</p>
-          <h2>Current Listings</h2>
-          <p class="muted">Tap any card for details. DM to claim — first come, first served.</p>
+          <p class="label">01 — The Case</p>
+          <h2>Current listings</h2>
+          <p class="muted">Hover a card to catch the holo. Tap for details — first DM claims it.</p>
         </div>
         <div class="toolbar">
-          <div class="search">
-            <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            <input id="search" type="search" placeholder="Search cards, sets…" />
-          </div>
-          <select id="sort" aria-label="Sort listings">
-            <option value="featured">Featured</option>
-            <option value="low">Price: Low → High</option>
-            <option value="high">Price: High → Low</option>
-            <option value="name">Name A → Z</option>
+          <label class="search"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <input id="search" type="search" placeholder="Search cards, sets…" /></label>
+          <select id="sort" aria-label="Sort">
+            <option value="featured">Featured</option><option value="low">Price ↑</option><option value="high">Price ↓</option><option value="name">A → Z</option>
           </select>
         </div>
       </div>
       <div class="chips" id="chips"></div>
       <div class="grid" id="grid"></div>
-      <p class="empty" id="empty" hidden>No cards match that search. DM me — I might have it off the list.</p>
+      <p class="empty" id="empty" hidden>Nothing matches — DM me, I might have it off the list.</p>
     </section>
 
-    <!-- SELL CTA -->
-    <section class="sell" id="sell">
-      <div class="sell-inner">
-        <div>
-          <p class="eyebrow pixel">02 · WE BUY</p>
-          <h2>Got cards sitting in a closet?</h2>
-          <p>From one binder to a full collection — vintage, modern, graded, sealed or Japanese. Send photos and get a fair cash or trade offer, usually within 24 hours.</p>
+    <section class="wrap" id="sell">
+      <div class="sell">
+        <div class="sell-copy">
+          <p class="label">02 — We Buy</p>
+          <h2>Cards collecting dust?<br/>Turn them into cash.</h2>
+          <p>One binder or an entire collection — vintage, modern, graded, sealed, Japanese. Send photos and get a fair offer, usually within 24 hours.</p>
           <ol class="steps">
-            <li><b>Snap photos</b> of your cards or collection</li>
-            <li><b>Send them over</b> by DM or the form</li>
-            <li><b>Get an offer</b> based on recent sold comps</li>
-            <li><b>Get paid</b> — cash, digital, or trade credit</li>
+            <li><b>Snap photos</b><span>of your cards or collection</span></li>
+            <li><b>Send them over</b><span>by DM or this form</span></li>
+            <li><b>Get an offer</b><span>based on recent sold comps</span></li>
+            <li><b>Get paid</b><span>cash, digital or trade credit</span></li>
           </ol>
         </div>
         <form class="sell-form" id="sellForm">
-          <h3>Request an Offer</h3>
-          <label>Name<input name="name" required placeholder="Ash K." /></label>
-          <label>Instagram or Phone<input name="contact" required placeholder="@yourhandle" /></label>
+          <h3>Request an offer</h3>
+          <label>Name<input name="name" required placeholder="Your name" /></label>
+          <label>Instagram or phone<input name="contact" required placeholder="@yourhandle" /></label>
           <label>What are you selling?
-            <select name="what">
-              <option>Singles</option><option>Graded slabs</option><option>Sealed product</option><option>Full collection</option><option>Not sure — need help</option>
-            </select>
+            <select name="what"><option>Singles</option><option>Graded slabs</option><option>Sealed product</option><option>Full collection</option><option>Not sure — need help</option></select>
           </label>
           <label>Details<textarea name="details" rows="3" placeholder="e.g. Base Set binder, ~200 cards, a few holos"></textarea></label>
-          <button class="btn btn-primary" type="submit">Send Request</button>
+          <button class="btn btn-gold" type="submit">Send request</button>
           <p class="form-note" id="formNote"></p>
         </form>
       </div>
     </section>
 
-    <!-- DEALS -->
-    <section class="section" id="deals">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow pixel">03 · TRADE LOG</p>
-          <h2>Recent Deals</h2>
-          <p class="muted">What's been moving lately.</p>
-        </div>
-        <div class="chips small" id="dealChips"></div>
+    <section class="section wrap" id="deals">
+      <div class="head">
+        <div><p class="label">03 — Trade Log</p><h2>Recent deals</h2><p class="muted">What's been moving lately.</p></div>
+        <div class="chips" id="dealChips"></div>
       </div>
       <div class="deals" id="dealList"></div>
     </section>
 
-    <!-- EVENTS -->
-    <section class="section" id="events">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow pixel">04 · ON TOUR</p>
-          <h2>Upcoming Events</h2>
-          <p class="muted">Come through, say what's up, and bring your trade binder.</p>
-        </div>
-      </div>
+    <section class="section wrap" id="events">
+      <div class="head"><div><p class="label">04 — On Tour</p><h2>Shows &amp; events</h2><p class="muted">Pull up, say what's up, bring your trade binder.</p></div></div>
       <div class="events" id="eventList"></div>
     </section>
 
-    <!-- WANT LIST -->
-    <section class="section want" id="want">
-      <div class="want-inner">
-        <div>
-          <p class="eyebrow pixel">05 · HUNTING</p>
-          <h2>The Want List</h2>
-          <p class="muted">Paying top dollar for these right now.</p>
-        </div>
-        <ul class="want-list" id="wantList"></ul>
+    <section class="section wrap" id="want">
+      <div class="want">
+        <div><p class="label">05 — Hunting</p><h2>The want list</h2><p class="muted">Paying strong for these right now.</p></div>
+        <ul id="wantList"></ul>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section" id="faq">
-      <div class="section-head"><div><p class="eyebrow pixel">06 · INFO</p><h2>FAQ</h2></div></div>
+    <section class="section wrap" id="faq">
+      <div class="head"><div><p class="label">06 — Info</p><h2>Good to know</h2></div></div>
       <div class="faq" id="faqList"></div>
-      <div class="payments">
-        <span class="muted">Accepted:</span>
-        <div id="payments"></div>
-      </div>
+      <div class="pays"><span class="muted">Accepted</span><div id="payments"></div></div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="contact">
-      <h2>Let's make a deal.</h2>
-      <p>Fastest way to reach me is Instagram DMs.</p>
-      <div class="hero-actions center">
-        <a class="btn btn-primary" data-ig-dm href="#">Message @collectorgian</a>
-        <a class="btn btn-ghost" data-ig href="#" target="_blank" rel="noopener">View Instagram</a>
+    <section class="cta">
+      <p class="label">Let's talk cards</p>
+      <h2><span class="holo-text">Make an offer.</span></h2>
+      <p class="muted">Fastest reply is always Instagram DMs.</p>
+      <div class="actions center">
+        <a class="btn btn-gold" data-ig-dm href="#">Message @collectorgian</a>
+        <a class="btn btn-glass" data-ig href="#" target="_blank" rel="noopener">View Instagram ↗</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="brand"><span class="brand-mark">CG</span><span class="brand-text">Collector<b>Gian</b></span></div>
-    <p class="muted small">© <span id="year"></span> Collector Gian. Pokémon and all related names are trademarks of Nintendo, Creatures Inc. and GAME FREAK inc. This site is not affiliated with or endorsed by them.</p>
+    <a class="brand" href="#top"><span class="brand-mark">CG</span><span>Collector<b>Gian</b></span></a>
+    <p>© <span id="year"></span> Collector Gian · Miami, FL. Pokémon and related names are trademarks of Nintendo, Creatures Inc. and GAME FREAK inc. Not affiliated with or endorsed by them.</p>
   </footer>
 
-  <!-- MODAL -->
   <div class="modal" id="modal" hidden>
-    <div class="modal-backdrop" data-close></div>
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-bg" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true">
       <button class="modal-x" data-close aria-label="Close">×</button>
       <div class="modal-body" id="modalBody"></div>
     </div>
   </div>
-
   <div class="toast" id="toast" hidden></div>
   <script src="app.js"></script>
 </body>
