@@ -1,0 +1,311 @@
+{
+  "profile": {
+    "name": "Collector Gian",
+    "handle": "collectorgian",
+    "tagline": "Pokémon TCG · Buy · Sell · Trade",
+    "location": "Miami, FL",
+    "instagram": "https://www.instagram.com/collectorgian",
+    "dm": "https://ig.me/m/collectorgian",
+    "email": "hello@collectorgian.com",
+    "payments": [
+      "Cash",
+      "Zelle",
+      "Venmo",
+      "PayPal G&S",
+      "Trades"
+    ]
+  },
+  "stats": [
+    {
+      "value": "Miami 🌴",
+      "label": "Local meetups & shows"
+    },
+    {
+      "value": "3+",
+      "label": "Card shows in 2026"
+    },
+    {
+      "value": "Raw · Slab",
+      "label": "Singles, graded & sealed"
+    },
+    {
+      "value": "24h",
+      "label": "Typical offer turnaround"
+    }
+  ],
+  "listings": [
+    {
+      "id": 13,
+      "name": "Alakazam (Japanese)",
+      "set": "Base Set · Holo · Japanese",
+      "type": "psychic",
+      "category": "Graded",
+      "condition": "NM-MT+ 8.5",
+      "grade": "8.5",
+      "price": 275,
+      "status": "Available",
+      "hp": 80,
+      "image": ""
+    },
+    {
+      "id": 14,
+      "name": "Mewtwo VSTAR",
+      "set": "Pokémon GO · Full Art",
+      "type": "psychic",
+      "category": "Graded",
+      "condition": "Gem Mint 10",
+      "grade": "10",
+      "price": 120,
+      "status": "Available",
+      "hp": 280,
+      "image": ""
+    },
+    {
+      "id": 1,
+      "name": "Charizard ex",
+      "set": "Obsidian Flames · Special Illustration Rare",
+      "type": "fire",
+      "category": "Singles",
+      "condition": "Near Mint",
+      "price": 85,
+      "status": "Available",
+      "hp": 330,
+      "image": ""
+    },
+    {
+      "id": 2,
+      "name": "Umbreon VMAX",
+      "set": "Evolving Skies · Alt Art",
+      "type": "dark",
+      "category": "Graded",
+      "condition": "Gem Mint 10",
+      "grade": "10",
+      "price": 1450,
+      "status": "Available",
+      "hp": 310,
+      "image": ""
+    },
+    {
+      "id": 3,
+      "name": "Pikachu with Grey Felt Hat",
+      "set": "SV Black Star Promo",
+      "type": "electric",
+      "category": "Graded",
+      "condition": "Mint 9",
+      "grade": "9",
+      "price": 520,
+      "status": "Pending",
+      "hp": 60,
+      "image": ""
+    },
+    {
+      "id": 4,
+      "name": "Prismatic Evolutions ETB",
+      "set": "Sealed Elite Trainer Box",
+      "type": "psychic",
+      "category": "Sealed",
+      "condition": "Factory Sealed",
+      "price": 110,
+      "status": "Available",
+      "image": ""
+    },
+    {
+      "id": 5,
+      "name": "Gengar VMAX",
+      "set": "Fusion Strike · Alt Art",
+      "type": "psychic",
+      "category": "Singles",
+      "condition": "Near Mint",
+      "price": 340,
+      "status": "Available",
+      "hp": 320,
+      "image": ""
+    },
+    {
+      "id": 6,
+      "name": "Lugia V",
+      "set": "Silver Tempest · Alt Art",
+      "type": "water",
+      "category": "Graded",
+      "condition": "Gem Mint 10",
+      "grade": "10",
+      "price": 690,
+      "status": "Sold",
+      "hp": 220,
+      "image": ""
+    },
+    {
+      "id": 7,
+      "name": "151 Booster Bundle",
+      "set": "Scarlet & Violet 151 · Sealed",
+      "type": "grass",
+      "category": "Sealed",
+      "condition": "Factory Sealed",
+      "price": 45,
+      "status": "Available",
+      "image": ""
+    },
+    {
+      "id": 8,
+      "name": "Rayquaza VMAX",
+      "set": "Evolving Skies · Alt Art",
+      "type": "dragon",
+      "category": "Singles",
+      "condition": "Lightly Played",
+      "price": 410,
+      "status": "Available",
+      "hp": 320,
+      "image": ""
+    },
+    {
+      "id": 9,
+      "name": "Mew ex",
+      "set": "151 · Special Illustration Rare",
+      "type": "psychic",
+      "category": "Singles",
+      "condition": "Near Mint",
+      "price": 95,
+      "status": "Available",
+      "hp": 180,
+      "image": ""
+    },
+    {
+      "id": 10,
+      "name": "Blastoise",
+      "set": "Base Set · Holo",
+      "type": "water",
+      "category": "Graded",
+      "condition": "Near Mint 7",
+      "grade": "7",
+      "price": 380,
+      "status": "Available",
+      "hp": 100,
+      "image": ""
+    },
+    {
+      "id": 11,
+      "name": "Surging Sparks Booster Box",
+      "set": "36 packs · Sealed",
+      "type": "electric",
+      "category": "Sealed",
+      "condition": "Factory Sealed",
+      "price": 165,
+      "status": "Available",
+      "image": ""
+    },
+    {
+      "id": 12,
+      "name": "Leafeon VSTAR",
+      "set": "Crown Zenith · Gold",
+      "type": "grass",
+      "category": "Singles",
+      "condition": "Near Mint",
+      "price": 60,
+      "status": "Available",
+      "hp": 260,
+      "image": ""
+    }
+  ],
+  "deals": [
+    {
+      "title": "Picked up a Base Set binder collection",
+      "detail": "120+ vintage holos & rares from a local collector",
+      "kind": "Bought",
+      "date": "2026-11-09",
+      "type": "fire"
+    },
+    {
+      "title": "Moonbreon PSA 10 → new home",
+      "detail": "Shipped same-day, insured & double-boxed",
+      "kind": "Sold",
+      "date": "2026-11-06",
+      "type": "dark"
+    },
+    {
+      "title": "Charizard ex SIR ⇄ Gengar alt + cash",
+      "detail": "Even-value trade at the Miami card show",
+      "kind": "Traded",
+      "date": "2026-11-02",
+      "type": "psychic"
+    },
+    {
+      "title": "Case of Surging Sparks booster boxes",
+      "detail": "Restocked — singles getting listed this week",
+      "kind": "Bought",
+      "date": "2026-10-28",
+      "type": "electric"
+    },
+    {
+      "title": "Japanese Eevee Heroes lot",
+      "detail": "Sold to a collector in Orlando",
+      "kind": "Sold",
+      "date": "2026-10-21",
+      "type": "water"
+    },
+    {
+      "title": "Graded slab bundle (6x PSA 9)",
+      "detail": "Bundle deal for a first-time buyer",
+      "kind": "Sold",
+      "date": "2026-10-15",
+      "type": "grass"
+    }
+  ],
+  "events": [
+    {
+      "name": "PokéKon Fest Miami",
+      "date": "2026-12-13",
+      "time": "Details TBA",
+      "venue": "@pokekonfestmiami",
+      "city": "Miami, FL",
+      "table": "Vendor",
+      "note": "Next stop! Graded slabs, sealed & singles. Buying collections at the table.",
+      "link": "https://www.instagram.com/pokekonfestmiami"
+    },
+    {
+      "name": "Homestead Con '26",
+      "date": "2026-09-12",
+      "end": "2026-09-13",
+      "time": "2-day con",
+      "venue": "120+ vendors · cosplay contest",
+      "city": "Homestead, FL",
+      "table": "Vendor",
+      "note": "Two days of trading at one of South Florida's biggest cons."
+    },
+    {
+      "name": "Mad Decks Card Show",
+      "date": "2026-05-31",
+      "time": "10:00 AM – 5:00 PM",
+      "venue": "Miami Springs Senior High School",
+      "city": "751 Dove Ave, Miami Springs, FL",
+      "table": "Vendor",
+      "note": "Featured in the official vendor shout-out.",
+      "link": "https://www.instagram.com/mad_decks_card_show"
+    }
+  ],
+  "wantlist": [
+    "Base Set 1st Edition holos",
+    "Japanese promos (any era)",
+    "Evolving Skies alt arts",
+    "Sealed vintage booster packs",
+    "Gold Star cards",
+    "Full collections & binders"
+  ],
+  "faq": [
+    {
+      "q": "Do you buy collections?",
+      "a": "Yes — from a single binder to a full storage unit. Send photos via DM and I'll make an offer, usually within 24 hours."
+    },
+    {
+      "q": "How do you ship?",
+      "a": "Toploader + team bag + bubble mailer for singles. Slabs and sealed ship boxed with tracking and insurance on anything over $100."
+    },
+    {
+      "q": "Can I meet up locally?",
+      "a": "Absolutely. Local meetups in public spots around South Florida, or catch me at any of the upcoming shows."
+    },
+    {
+      "q": "Do you do trades?",
+      "a": "All the time. I value trades fairly using recent sold comps — bring your binder."
+    }
+  ]
+}
