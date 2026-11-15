@@ -111,7 +111,8 @@
       "condition": "Factory Sealed",
       "price": 110,
       "status": "Available",
-      "image": ""
+      "image": "https://www.stompinggroundstcg.com/cdn/shop/files/Prismatic_Evolutions_Elite_Trainer_Box_600x.webp?v=1731980347",
+      "imageKind": "reference"
     },
     {
       "id": 5,
@@ -149,7 +150,8 @@
       "condition": "Factory Sealed",
       "price": 45,
       "status": "Available",
-      "image": ""
+      "image": "https://beamcardshop.com/cdn/shop/files/Ontwerp_zonder_titel_11-Photoroom.png?v=1777379129&width=1000",
+      "imageKind": "reference"
     },
     {
       "id": 8,
@@ -200,7 +202,8 @@
       "condition": "Factory Sealed",
       "price": 165,
       "status": "Available",
-      "image": ""
+      "image": "https://www.poketalk.se/cdn/shop/files/Dinstycketext_44.png?v=1729500644",
+      "imageKind": "reference"
     },
     {
       "id": 12,
