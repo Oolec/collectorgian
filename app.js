@@ -22,6 +22,12 @@ function init() {
   $("#wantList").innerHTML = DATA.wantlist.map(w => `<li>${esc(w)}</li>`).join("");
   $("#faqList").innerHTML = DATA.faq.map(f => `<details class="rv"><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join("");
   $("#payments").innerHTML = p.payments.map(x => `<span>${esc(x)}</span>`).join("");
+  if (p.avatar) {
+    $$(".brand-mark").forEach(b => { b.classList.add("has-img"); b.innerHTML = `<img src="${p.avatar}" alt="CollectorGian logo">`; });
+    $(".pack-logo").innerHTML = `<img src="${p.avatar}" alt="">`;
+    $("link[rel=icon]").href = p.avatar;
+  }
+  renderGallery();
   renderTicker(); renderChips(); renderGrid(); renderDeals(); renderEvents();
   setupPack(); bindUI(); setupFx(); reveal();
 }
@@ -37,7 +43,7 @@ function card(l, slab = true) {
     const face = l.image
       ? `<div class="card photo"><img src="${esc(l.image)}" alt="${esc(l.name)}" loading="lazy">${fx}</div>`
       : `<div class="card"><div class="card-in"><div class="c-top"><b>${esc(l.name)}</b>${l.hp ? `<span>${l.hp} HP</span>` : ""}</div><div class="c-art"><span>${ICON[l.type] || "✨"}</span></div><div class="c-bot"><span>${setName}</span><span>★★★</span></div></div>${fx}</div>`;
-    inner = slab && l.category === "Graded"
+    inner = slab && l.category === "Graded" && !l.image
       ? `<div class="slab"><div class="slab-label"><span>${esc(l.name)}<small>${setName}</small></span><b>${esc(l.grade || "")}</b></div>${face}</div>` : face;
   }
   return `<div class="card3d" style="${t}"><div class="tilt">${inner}</div></div>`;
@@ -69,6 +75,20 @@ function setupPack() {
   $("#pack").addEventListener("click", rip);
   hint.addEventListener("click", rip);
   pulls.addEventListener("click", e => { const p = e.target.closest(".pull"); if (p) openListing(p.dataset.id); });
+}
+
+/* ---------- gallery ---------- */
+function renderGallery() {
+  const g = DATA.gallery || [];
+  if (!g.length) return $("#gallery").remove();
+  $("#galleryGrid").innerHTML = g.map((x, i) => `<figure class="shot rv${x.big ? " big" : ""}" data-i="${i}" style="transition-delay:${i * 60}ms"><img src="${esc(x.src)}" alt="${esc(x.caption)}" loading="lazy"><figcaption>${esc(x.caption)}</figcaption></figure>`).join("");
+  $("#galleryGrid").addEventListener("click", e => {
+    const f = e.target.closest(".shot"); if (!f) return;
+    const x = g[f.dataset.i];
+    $(".modal-card").style.removeProperty("--t");
+    $("#modalBody").innerHTML = `<figure class="lightbox"><img src="${esc(x.src)}" alt="${esc(x.caption)}"><figcaption>${esc(x.caption)} · <a href="${DATA.profile.instagram}" target="_blank" rel="noopener">@${DATA.profile.handle}</a></figcaption></figure>`;
+    $("#modal").hidden = false; document.body.style.overflow = "hidden";
+  });
 }
 
 /* ---------- ticker ---------- */

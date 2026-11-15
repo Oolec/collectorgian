@@ -13,7 +13,8 @@
       "Venmo",
       "PayPal G&S",
       "Trades"
-    ]
+    ],
+    "avatar": "images/profile.webp"
   },
   "stats": [
     {
@@ -45,12 +46,12 @@
       "price": 275,
       "status": "Available",
       "hp": 80,
-      "image": ""
+      "image": "images/alakazam-slab.webp"
     },
     {
       "id": 14,
       "name": "Mewtwo VSTAR",
-      "set": "Pokémon GO · Full Art",
+      "set": "Pokémon GO · Full Art · Off to PSA",
       "type": "psychic",
       "category": "Graded",
       "condition": "Gem Mint 10",
@@ -58,7 +59,7 @@
       "price": 120,
       "status": "Available",
       "hp": 280,
-      "image": ""
+      "image": "images/mewtwo-slab.webp"
     },
     {
       "id": 1,
@@ -306,6 +307,37 @@
     {
       "q": "Do you do trades?",
       "a": "All the time. I value trades fairly using recent sold comps — bring your binder."
+    }
+  ],
+  "gallery": [
+    {
+      "src": "images/gian-table.webp",
+      "caption": "Gian at the CollectorGian table",
+      "big": true
+    },
+    {
+      "src": "images/gian-booth.webp",
+      "caption": "Buy · Sell · Trade setup"
+    },
+    {
+      "src": "images/psa-slabs.webp",
+      "caption": "Fresh PSA slabs"
+    },
+    {
+      "src": "images/show-table.webp",
+      "caption": "Sealed wall + graded case"
+    },
+    {
+      "src": "images/show-display.webp",
+      "caption": "Show-floor display"
+    },
+    {
+      "src": "images/alakazam-slab.webp",
+      "caption": "Japanese Base Alakazam · 8.5"
+    },
+    {
+      "src": "images/mewtwo-slab.webp",
+      "caption": "Mewtwo VSTAR — off to PSA"
     }
   ]
 }
