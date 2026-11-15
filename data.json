@@ -6,34 +6,8 @@
     "location": "Miami, FL",
     "instagram": "https://www.instagram.com/collectorgian",
     "dm": "https://ig.me/m/collectorgian",
-    "email": "hello@collectorgian.com",
-    "payments": [
-      "Cash",
-      "Zelle",
-      "Venmo",
-      "PayPal G&S",
-      "Trades"
-    ],
     "avatar": "images/profile.webp"
   },
-  "stats": [
-    {
-      "value": "Miami 🌴",
-      "label": "Local meetups & shows"
-    },
-    {
-      "value": "3+",
-      "label": "Card shows in 2026"
-    },
-    {
-      "value": "Raw · Slab",
-      "label": "Singles, graded & sealed"
-    },
-    {
-      "value": "24h",
-      "label": "Typical offer turnaround"
-    }
-  ],
   "listings": [
     {
       "id": 13,
@@ -46,7 +20,8 @@
       "price": 275,
       "status": "Available",
       "hp": 80,
-      "image": "images/alakazam-slab.webp"
+      "image": "images/alakazam-slab.webp",
+      "verified": false
     },
     {
       "id": 14,
@@ -59,7 +34,8 @@
       "price": 120,
       "status": "Available",
       "hp": 280,
-      "image": "images/mewtwo-slab.webp"
+      "image": "images/mewtwo-slab.webp",
+      "verified": false
     },
     {
       "id": 1,
@@ -72,7 +48,8 @@
       "status": "Available",
       "hp": 330,
       "image": "https://images.pokemontcg.io/sv3/223_hires.png",
-      "imageKind": "reference"
+      "imageKind": "reference",
+      "verified": false
     },
     {
       "id": 2,
@@ -86,7 +63,8 @@
       "status": "Available",
       "hp": 310,
       "image": "https://images.pokemontcg.io/swsh7/215_hires.png",
-      "imageKind": "reference"
+      "imageKind": "reference",
+      "verified": false
     },
     {
       "id": 3,
@@ -100,7 +78,8 @@
       "status": "Pending",
       "hp": 60,
       "image": "https://images.pokemontcg.io/svp/085_hires.png",
-      "imageKind": "reference"
+      "imageKind": "reference",
+      "verified": false
     },
     {
       "id": 4,
@@ -112,7 +91,8 @@
       "price": 110,
       "status": "Available",
       "image": "https://www.stompinggroundstcg.com/cdn/shop/files/Prismatic_Evolutions_Elite_Trainer_Box_600x.webp?v=1731980347",
-      "imageKind": "reference"
+      "imageKind": "reference",
+      "verified": false
     },
     {
       "id": 5,
@@ -125,7 +105,8 @@
       "status": "Available",
       "hp": 320,
       "image": "https://images.pokemontcg.io/swsh8/271_hires.png",
-      "imageKind": "reference"
+      "imageKind": "reference",
+      "verified": false
     },
     {
       "id": 6,
@@ -139,7 +120,8 @@
       "status": "Sold",
       "hp": 220,
       "image": "https://images.pokemontcg.io/swsh12/186_hires.png",
-      "imageKind": "reference"
+      "imageKind": "reference",
+      "verified": false
     },
     {
       "id": 7,
@@ -151,7 +133,8 @@
       "price": 45,
       "status": "Available",
       "image": "https://beamcardshop.com/cdn/shop/files/Ontwerp_zonder_titel_11-Photoroom.png?v=1777379129&width=1000",
-      "imageKind": "reference"
+      "imageKind": "reference",
+      "verified": false
     },
     {
       "id": 8,
@@ -164,7 +147,8 @@
       "status": "Available",
       "hp": 320,
       "image": "https://images.pokemontcg.io/swsh7/218_hires.png",
-      "imageKind": "reference"
+      "imageKind": "reference",
+      "verified": false
     },
     {
       "id": 9,
@@ -177,7 +161,8 @@
       "status": "Available",
       "hp": 180,
       "image": "https://images.pokemontcg.io/sv3pt5/193_hires.png",
-      "imageKind": "reference"
+      "imageKind": "reference",
+      "verified": false
     },
     {
       "id": 10,
@@ -191,7 +176,8 @@
       "status": "Available",
       "hp": 100,
       "image": "https://images.pokemontcg.io/base1/2_hires.png",
-      "imageKind": "reference"
+      "imageKind": "reference",
+      "verified": false
     },
     {
       "id": 11,
@@ -203,7 +189,8 @@
       "price": 165,
       "status": "Available",
       "image": "https://www.poketalk.se/cdn/shop/files/Dinstycketext_44.png?v=1729500644",
-      "imageKind": "reference"
+      "imageKind": "reference",
+      "verified": false
     },
     {
       "id": 12,
@@ -216,109 +203,31 @@
       "status": "Available",
       "hp": 260,
       "image": "https://images.pokemontcg.io/swsh12pt5gg/GG35_hires.png",
-      "imageKind": "reference"
-    }
-  ],
-  "deals": [
-    {
-      "title": "Picked up a Base Set binder collection",
-      "detail": "120+ vintage holos & rares from a local collector",
-      "kind": "Bought",
-      "date": "2026-11-09",
-      "type": "fire"
-    },
-    {
-      "title": "Moonbreon PSA 10 → new home",
-      "detail": "Shipped same-day, insured & double-boxed",
-      "kind": "Sold",
-      "date": "2026-11-06",
-      "type": "dark"
-    },
-    {
-      "title": "Charizard ex SIR ⇄ Gengar alt + cash",
-      "detail": "Even-value trade at the Miami card show",
-      "kind": "Traded",
-      "date": "2026-11-02",
-      "type": "psychic"
-    },
-    {
-      "title": "Case of Surging Sparks booster boxes",
-      "detail": "Restocked — singles getting listed this week",
-      "kind": "Bought",
-      "date": "2026-10-28",
-      "type": "electric"
-    },
-    {
-      "title": "Japanese Eevee Heroes lot",
-      "detail": "Sold to a collector in Orlando",
-      "kind": "Sold",
-      "date": "2026-10-21",
-      "type": "water"
-    },
-    {
-      "title": "Graded slab bundle (6x PSA 9)",
-      "detail": "Bundle deal for a first-time buyer",
-      "kind": "Sold",
-      "date": "2026-10-15",
-      "type": "grass"
+      "imageKind": "reference",
+      "verified": false
     }
   ],
   "events": [
     {
       "name": "PokéKon Fest Miami",
       "date": "2026-12-13",
-      "time": "Details TBA",
-      "venue": "@pokekonfestmiami",
       "city": "Miami, FL",
-      "table": "Vendor",
-      "note": "Next stop! Graded slabs, sealed & singles. Buying collections at the table.",
       "link": "https://www.instagram.com/pokekonfestmiami"
     },
     {
       "name": "Homestead Con '26",
       "date": "2026-09-12",
       "end": "2026-09-13",
-      "time": "2-day con",
-      "venue": "120+ vendors · cosplay contest",
-      "city": "Homestead, FL",
-      "table": "Vendor",
-      "note": "Two days of trading at one of South Florida's biggest cons."
+      "city": "Homestead, FL"
     },
     {
       "name": "Mad Decks Card Show",
       "date": "2026-05-31",
       "time": "10:00 AM – 5:00 PM",
       "venue": "Miami Springs Senior High School",
-      "city": "751 Dove Ave, Miami Springs, FL",
-      "table": "Vendor",
-      "note": "Featured in the official vendor shout-out.",
+      "address": "751 Dove Ave",
+      "city": "Miami Springs, FL",
       "link": "https://www.instagram.com/mad_decks_card_show"
-    }
-  ],
-  "wantlist": [
-    "Base Set 1st Edition holos",
-    "Japanese promos (any era)",
-    "Evolving Skies alt arts",
-    "Sealed vintage booster packs",
-    "Gold Star cards",
-    "Full collections & binders"
-  ],
-  "faq": [
-    {
-      "q": "Do you buy collections?",
-      "a": "Yes — from a single binder to a full storage unit. Send photos via DM and I'll make an offer, usually within 24 hours."
-    },
-    {
-      "q": "How do you ship?",
-      "a": "Toploader + team bag + bubble mailer for singles. Slabs and sealed ship boxed with tracking and insurance on anything over $100."
-    },
-    {
-      "q": "Can I meet up locally?",
-      "a": "Absolutely. Local meetups in public spots around South Florida, or catch me at any of the upcoming shows."
-    },
-    {
-      "q": "Do you do trades?",
-      "a": "All the time. I value trades fairly using recent sold comps — bring your binder."
     }
   ],
   "gallery": [
@@ -351,5 +260,93 @@
       "src": "images/mewtwo-slab.webp",
       "caption": "Mewtwo VSTAR — off to PSA"
     }
-  ]
+  ],
+  "deals": [
+    {
+      "title": "Picked up a Base Set binder collection",
+      "detail": "120+ vintage holos & rares from a local collector",
+      "kind": "Bought",
+      "date": "2026-11-09",
+      "type": "fire",
+      "verified": false
+    },
+    {
+      "title": "Moonbreon PSA 10 → new home",
+      "detail": "Shipped same-day, insured & double-boxed",
+      "kind": "Sold",
+      "date": "2026-11-06",
+      "type": "dark",
+      "verified": false
+    },
+    {
+      "title": "Charizard ex SIR ⇄ Gengar alt + cash",
+      "detail": "Even-value trade at the Miami card show",
+      "kind": "Traded",
+      "date": "2026-11-02",
+      "type": "psychic",
+      "verified": false
+    },
+    {
+      "title": "Case of Surging Sparks booster boxes",
+      "detail": "Restocked — singles getting listed this week",
+      "kind": "Bought",
+      "date": "2026-10-28",
+      "type": "electric",
+      "verified": false
+    },
+    {
+      "title": "Japanese Eevee Heroes lot",
+      "detail": "Sold to a collector in Orlando",
+      "kind": "Sold",
+      "date": "2026-10-21",
+      "type": "water",
+      "verified": false
+    },
+    {
+      "title": "Graded slab bundle (6x PSA 9)",
+      "detail": "Bundle deal for a first-time buyer",
+      "kind": "Sold",
+      "date": "2026-10-15",
+      "type": "grass",
+      "verified": false
+    }
+  ],
+  "wantlist": [
+    "Base Set 1st Edition holos",
+    "Japanese promos (any era)",
+    "Evolving Skies alt arts",
+    "Sealed vintage booster packs",
+    "Gold Star cards",
+    "Full collections & binders"
+  ],
+  "faq": [
+    {
+      "q": "Do you buy collections?",
+      "a": "Yes — from a single binder to a full storage unit. Send photos via DM and I'll make an offer, usually within 24 hours."
+    },
+    {
+      "q": "How do you ship?",
+      "a": "Toploader + team bag + bubble mailer for singles. Slabs and sealed ship boxed with tracking and insurance on anything over $100."
+    },
+    {
+      "q": "Can I meet up locally?",
+      "a": "Absolutely. Local meetups in public spots around South Florida, or catch me at any of the upcoming shows."
+    },
+    {
+      "q": "Do you do trades?",
+      "a": "All the time. I value trades fairly using recent sold comps — bring your binder."
+    }
+  ],
+  "payments": [
+    "Cash",
+    "Zelle",
+    "Venmo",
+    "PayPal G&S",
+    "Trades"
+  ],
+  "confirmed": {
+    "wantlist": false,
+    "faq": false,
+    "payments": false
+  }
 }

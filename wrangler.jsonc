@@ -1,0 +1,16 @@
+{
+  "name": "collectorgian",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*", "/media/*"]
+  },
+  // Listings, show info and uploaded photos live here (KV namespace "collectorgian-store").
+  "kv_namespaces": [{ "binding": "STORE", "id": "be7287ded4904f3a848e3b1917234998" }],
+  "observability": { "enabled": true }
+  // Secret required for the admin page (set in the Cloudflare dashboard, never in this repo):
+  //   ADMIN_PASSWORD
+}

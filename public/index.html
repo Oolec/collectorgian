@@ -4,31 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Collector Gian · Pokémon TCG Buy · Sell · Trade</title>
-  <meta name="description" content="Collector Gian — Miami's Pokémon card vendor. Graded slabs, sealed product, singles, recent deals and upcoming card shows." />
+  <meta name="description" content="Collector Gian — Miami Pokémon card vendor. Graded slabs, sealed product, singles and upcoming card shows." />
   <meta property="og:title" content="Collector Gian · Pokémon TCG" />
   <meta property="og:description" content="Graded slabs, sealed product & singles out of Miami. Buy · Sell · Trade." />
   <meta name="theme-color" content="#07060f" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect x='12' y='4' width='40' height='56' rx='7' fill='%23ffcb05'/><rect x='17' y='9' width='30' height='46' rx='4' fill='%236d28d9'/><text x='32' y='39' font-size='17' font-family='Arial' font-weight='900' text-anchor='middle' fill='%23ffcb05'>CG</text></svg>" />
+  <link rel="icon" href="images/profile.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=1794713570" />
+  <link rel="stylesheet" href="styles.css?v=1794716578" />
 </head>
 <body>
   <div class="aurora" aria-hidden="true"></div>
   <div class="glow" id="glow" aria-hidden="true"></div>
   <canvas id="fx" aria-hidden="true"></canvas>
   <div class="progress" id="progress"></div>
+  <div class="demo-bar" id="demoBar" hidden>Demo preview — sample listings and details that Gian hasn't confirmed. <a href="./">See the live site</a></div>
 
   <header class="nav" id="top">
     <a class="brand" href="#top"><span class="brand-mark">CG</span><span>Collector<b>Gian</b></span></a>
     <nav class="nav-links" id="navLinks">
       <a href="#listings">Listings</a>
-      <a href="#deals">Deals</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#events">Events</a>
+      <a href="#deals" data-nav="deals">Deals</a>
+      <a href="#gallery" data-nav="gallery">Gallery</a>
+      <a href="#events">Shows</a>
       <a href="#sell">Sell to Me</a>
-      <a href="#faq">FAQ</a>
+      <a href="#faq" data-nav="faq">FAQ</a>
     </nav>
     <button class="shiny-btn" id="shinyBtn" title="Shiny mode" aria-label="Toggle shiny mode">✨</button>
     <a class="btn btn-gold btn-sm nav-cta" data-ig-dm href="#">DM Gian</a>
@@ -44,13 +45,13 @@
           <span class="line"><span class="holo-text">Fair deals.</span></span>
           <span class="line"><span>Real collector.</span></span>
         </h1>
-        <p class="lead">Graded slabs, sealed product and chase singles — bought, sold and traded by <b>@collectorgian</b>. Catch the table at South Florida's biggest card shows.</p>
+        <p class="lead">Graded slabs, sealed product and singles — bought, sold and traded by <b>@collectorgian</b>. Find the table at South Florida card shows.</p>
         <div class="actions">
           <a href="#listings" class="btn btn-gold">Shop the case</a>
           <a href="#sell" class="btn btn-glass">Sell your collection</a>
         </div>
         <ul class="trust">
-          <li>Authentic, always</li><li>Local Miami meetups</li><li>Tracked &amp; insured shipping</li>
+          <li>Buy · Sell · Trade</li><li>Based in Miami</li><li>At South Florida card shows</li>
         </ul>
       </div>
 
@@ -61,7 +62,7 @@
           <span class="pack-body">
             <span class="pack-logo">CG</span>
             <span class="pack-name">COLLECTOR GIAN</span>
-            <span class="pack-sub">FEATURED PULLS · 3 CARDS</span>
+            <span class="pack-sub">FEATURED PULLS</span>
             <span class="pack-bolt">✦</span>
           </span>
           <span class="pack-sheen"></span>
@@ -81,11 +82,11 @@
     <section class="section wrap" id="listings">
       <div class="head">
         <div>
-          <p class="label">01 — The Case</p>
-          <h2>Current listings</h2>
-          <p class="muted">Hover a card to catch the holo. Tap for details — first DM claims it.</p>
+          <p class="label">The Case</p>
+          <h2>Available now</h2>
+          <p class="muted" id="listSub">Tap a card for photos and details, or send Gian an offer.</p>
         </div>
-        <div class="toolbar">
+        <div class="toolbar" id="toolbar">
           <label class="search"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             <input id="search" type="search" placeholder="Search cards, sets…" /></label>
           <select id="sort" aria-label="Sort">
@@ -95,20 +96,31 @@
       </div>
       <div class="chips" id="chips"></div>
       <div class="grid" id="grid"></div>
-      <p class="empty" id="empty" hidden>Nothing matches — DM me, I might have it off the list.</p>
+      <p class="empty" id="empty" hidden></p>
+      <div class="empty-card" id="emptyAll" hidden>
+        <span class="empty-ico">🃏</span>
+        <h3>The case is being restocked</h3>
+        <p class="muted">Listings will show up here as soon as Gian posts them. Until then, DM him to ask what's in the case.</p>
+        <a class="btn btn-gold" data-ig-dm href="#">Ask Gian what's available</a>
+      </div>
+
+      <div class="sold-wrap" id="soldWrap" hidden>
+        <div class="sold-head"><h3>Sold</h3><span class="muted" id="soldCount"></span></div>
+        <p class="muted">Already found a new home — DM Gian if you're hunting something similar.</p>
+        <div class="grid" id="soldGrid"></div>
+      </div>
     </section>
 
     <section class="wrap" id="sell">
       <div class="sell">
         <div class="sell-copy">
-          <p class="label">02 — We Buy</p>
-          <h2>Cards collecting dust?<br/>Turn them into cash.</h2>
-          <p>One binder or an entire collection — vintage, modern, graded, sealed, Japanese. Send photos and get a fair offer, usually within 24 hours.</p>
+          <p class="label">We Buy</p>
+          <h2>Cards collecting dust?<br/>Get an offer.</h2>
+          <p>One binder or a whole collection — send Gian the details and photos and he'll get back to you with an offer.</p>
           <ol class="steps">
             <li><b>Snap photos</b><span>of your cards or collection</span></li>
-            <li><b>Send them over</b><span>by DM or this form</span></li>
-            <li><b>Get an offer</b><span>based on recent sold comps</span></li>
-            <li><b>Get paid</b><span>cash, digital or trade credit</span></li>
+            <li><b>Send them over</b><span>by Instagram DM</span></li>
+            <li><b>Get an offer</b><span>straight from Gian</span></li>
           </ol>
         </div>
         <form class="sell-form" id="sellForm">
@@ -119,16 +131,15 @@
             <select name="what"><option>Singles</option><option>Graded slabs</option><option>Sealed product</option><option>Full collection</option><option>Not sure — need help</option></select>
           </label>
           <label>Details<textarea name="details" rows="3" placeholder="e.g. Base Set binder, ~200 cards, a few holos"></textarea></label>
-          <button class="btn btn-gold" type="submit">Send request</button>
-          <p class="form-note" id="formNote"></p>
+          <button class="btn btn-gold" type="submit">Copy request &amp; open DMs</button>
+          <p class="form-note" id="formNote">Nothing is sent from this site — your request is copied so you can paste it into Gian's DMs.</p>
         </form>
       </div>
     </section>
 
     <section class="section wrap" id="deals">
       <div class="head">
-        <div><p class="label">03 — Trade Log</p><h2>Recent deals</h2><p class="muted">What's been moving lately.</p></div>
-        <div class="chips" id="dealChips"></div>
+        <div><p class="label">Trade Log</p><h2>Recent deals</h2></div>
       </div>
       <div class="deals" id="dealList"></div>
     </section>
@@ -142,27 +153,27 @@
     </section>
 
     <section class="section wrap" id="events">
-      <div class="head"><div><p class="label">04 — On Tour</p><h2>Shows &amp; events</h2><p class="muted">Pull up, say what's up, bring your trade binder.</p></div></div>
+      <div class="head"><div><p class="label">On Tour</p><h2>Shows &amp; events</h2><p class="muted">Pull up, say what's up, bring your trade binder.</p></div></div>
       <div class="events" id="eventList"></div>
     </section>
 
     <section class="section wrap" id="want">
       <div class="want">
-        <div><p class="label">05 — Hunting</p><h2>The want list</h2><p class="muted">Paying strong for these right now.</p></div>
+        <div><p class="label">Hunting</p><h2>The want list</h2><p class="muted">Cards Gian is looking to buy.</p></div>
         <ul id="wantList"></ul>
       </div>
     </section>
 
     <section class="section wrap" id="faq">
-      <div class="head"><div><p class="label">06 — Info</p><h2>Good to know</h2></div></div>
+      <div class="head"><div><p class="label">Info</p><h2>Good to know</h2></div></div>
       <div class="faq" id="faqList"></div>
-      <div class="pays"><span class="muted">Accepted</span><div id="payments"></div></div>
+      <div class="pays" id="pays"><span class="muted">Accepted</span><div id="payments"></div></div>
     </section>
 
     <section class="cta">
       <p class="label">Let's talk cards</p>
       <h2><span class="holo-text">Make an offer.</span></h2>
-      <p class="muted">Fastest reply is always Instagram DMs.</p>
+      <p class="muted">The fastest way to reach Gian is Instagram DMs.</p>
       <div class="actions center">
         <a class="btn btn-gold" data-ig-dm href="#">Message @collectorgian</a>
         <a class="btn btn-glass" data-ig href="#" target="_blank" rel="noopener">View Instagram ↗</a>
@@ -172,7 +183,7 @@
 
   <footer class="footer">
     <a class="brand" href="#top"><span class="brand-mark">CG</span><span>Collector<b>Gian</b></span></a>
-    <p>© <span id="year"></span> Collector Gian · Miami, FL. Pokémon and related names are trademarks of Nintendo, Creatures Inc. and GAME FREAK inc. Not affiliated with or endorsed by them.</p>
+    <p>© <span id="year"></span> Collector Gian · Miami, FL. Pokémon and related names are trademarks of Nintendo, Creatures Inc. and GAME FREAK inc. Not affiliated with or endorsed by them. <a href="admin/">Seller login</a></p>
   </footer>
 
   <div class="modal" id="modal" hidden>
@@ -182,7 +193,15 @@
       <div class="modal-body" id="modalBody"></div>
     </div>
   </div>
+
+  <div class="lb" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lb-x" data-lb="close" aria-label="Close">×</button>
+    <button class="lb-nav prev" data-lb="prev" aria-label="Previous photo">‹</button>
+    <figure><img id="lbImg" alt="" /><figcaption id="lbCap"></figcaption></figure>
+    <button class="lb-nav next" data-lb="next" aria-label="Next photo">›</button>
+  </div>
+
   <div class="toast" id="toast" hidden></div>
-  <script src="app.js?v=1794713570"></script>
+  <script src="app.js?v=1794716578"></script>
 </body>
 </html>

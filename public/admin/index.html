@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Admin · Collector Gian</title>
+  <meta name="theme-color" content="#07060f" />
+  <link rel="icon" href="/images/profile.webp" />
+  <style>
+    :root { --bg: #07060f; --bg2: #110f22; --panel: #18152e; --line: rgba(255,255,255,.1); --ink: #f4f1ff; --mute: #a29cc6; --gold: #ffcb05; --violet: #8b5cf6; --red: #ff6a4d; --green: #3dff9a; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--ink); min-height: 100dvh; -webkit-tap-highlight-color: transparent; }
+    [hidden] { display: none !important; }
+    button, input, select, textarea { font: inherit; color: inherit; }
+    a { color: var(--gold); }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 0 14px; }
+    .muted { color: var(--mute); font-size: .88rem; }
+    h1 { font-size: 1.4rem; } h2 { font-size: 1.15rem; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .4rem; min-height: 46px; padding: 0 1.1rem; border-radius: 12px; border: 1px solid var(--line); background: var(--panel); font-weight: 700; cursor: pointer; text-decoration: none; color: var(--ink); }
+    .btn.gold { background: var(--gold); color: #120d00; border-color: var(--gold); } .btn.sm { min-height: 38px; padding: 0 .8rem; font-size: .88rem; }
+    .btn.danger { color: var(--red); border-color: color-mix(in srgb, var(--red) 50%, transparent); } .btn.danger.arm { background: var(--red); color: #000; }
+    .btn:disabled { opacity: .5; }
+    input:not([type=checkbox]):not([type=file]), select, textarea { width: 100%; min-height: 46px; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: .6rem .8rem; outline: 0; }
+    input:focus, select:focus, textarea:focus { border-color: var(--gold); }
+    textarea { resize: vertical; min-height: 90px; }
+    label.f { display: grid; gap: .3rem; font-size: .82rem; font-weight: 600; color: var(--mute); margin-bottom: .9rem; }
+    label.c { display: flex; align-items: center; gap: .6rem; font-weight: 600; margin-bottom: .9rem; min-height: 44px; }
+    input[type=checkbox] { width: 24px; height: 24px; accent-color: var(--gold); flex: none; }
+
+    /* login */
+    .gate { min-height: 100dvh; display: grid; place-items: center; padding: 20px; }
+    .gate-card { width: min(400px, 100%); background: var(--panel); border: 1px solid var(--line); border-radius: 22px; padding: 26px 22px; display: grid; gap: 14px; text-align: center; }
+    .gate-card img { width: 84px; height: 84px; border-radius: 50%; margin: 0 auto; }
+    .gate-card ol { text-align: left; padding-left: 1.2rem; display: grid; gap: .5rem; font-size: .92rem; } code { background: var(--bg); padding: .1rem .35rem; border-radius: 6px; font-size: .88em; }
+    .msg { min-height: 1.2em; font-size: .9rem; font-weight: 600; } .msg.err { color: var(--red); }
+
+    /* app */
+    .top { position: sticky; top: 0; z-index: 10; background: rgba(7,6,15,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .bar { display: flex; align-items: center; gap: .6rem; padding: 10px 0; } .bar img { width: 36px; height: 36px; border-radius: 50%; } .bar b { flex: 1; }
+    .state { font-size: .75rem; font-weight: 700; padding: .3rem .65rem; border-radius: 999px; border: 1px solid currentColor; color: var(--green); white-space: nowrap; } .state.busy { color: var(--gold); } .state.err { color: var(--red); }
+    .tabs { display: flex; gap: .4rem; overflow-x: auto; padding-bottom: 10px; } .tabs button { flex: 1; white-space: nowrap; min-height: 40px; padding: 0 .9rem; border-radius: 999px; border: 1px solid var(--line); background: none; font-weight: 700; color: var(--mute); cursor: pointer; }
+    .tabs button.on { background: var(--gold); color: #120d00; border-color: var(--gold); }
+    main { padding: 16px 0 90px; display: grid; gap: 12px; }
+    .intro { display: flex; justify-content: space-between; align-items: center; gap: .8rem; flex-wrap: wrap; }
+    .note { background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); border-radius: 14px; padding: .8rem 1rem; font-size: .88rem; }
+    .row { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 12px; display: grid; gap: 10px; }
+    .row.off { border-style: dashed; }
+    .row-top { display: flex; gap: .7rem; align-items: center; } .row-top .grow { flex: 1; min-width: 0; } .row-top b { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .th { width: 52px; height: 64px; border-radius: 8px; object-fit: cover; background: var(--bg); flex: none; } .th.none { display: grid; place-items: center; font-size: 1.4rem; }
+    .tag { display: inline-block; font-size: .65rem; font-weight: 800; letter-spacing: .05em; padding: .12rem .45rem; border-radius: 6px; background: var(--gold); color: #120d00; margin-top: .2rem; }
+    .quick { display: grid; grid-template-columns: 1fr 1.2fr; gap: 8px; align-items: center; } .quick .c { grid-column: 1 / -1; margin: 0; }
+    .money { position: relative; } .money::before { content: "$"; position: absolute; left: .8rem; top: 50%; transform: translateY(-50%); color: var(--gold); font-weight: 700; } .money input { padding-left: 1.6rem !important; }
+    select[data-f=status].Available { border-color: var(--green); } select[data-f=status].Pending { border-color: var(--gold); } select[data-f=status].Sold { border-color: var(--red); }
+
+    /* editor sheet */
+    .sheet { position: fixed; inset: 0; z-index: 50; background: var(--bg2); overflow-y: auto; }
+    .sheet-bar { position: sticky; top: 0; z-index: 2; background: var(--bg2); border-bottom: 1px solid var(--line); }
+    .sheet-bar .wrap { display: flex; align-items: center; gap: .6rem; padding-top: 10px; padding-bottom: 10px; } .sheet-bar h2 { flex: 1; }
+    .sheet-body { padding-top: 16px; padding-bottom: 60px; }
+    .seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: .9rem; } .seg button { min-height: 46px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); font-weight: 700; cursor: pointer; }
+    .seg button.on.Available { background: var(--green); color: #000; } .seg button.on.Pending { background: var(--gold); color: #000; } .seg button.on.Sold { background: var(--red); color: #000; }
+    .photos { display: grid; gap: 8px; margin: .4rem 0 .8rem; }
+    .ph { display: grid; grid-template-columns: 64px 1fr auto; gap: 8px; align-items: center; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 6px; }
+    .ph img { width: 64px; height: 64px; object-fit: cover; border-radius: 8px; background: #fff; } .ph .acts { display: flex; gap: 4px; } .ph .acts button { width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); cursor: pointer; }
+    .ph small { grid-column: 2 / -1; color: var(--gold); font-size: .72rem; font-weight: 700; }
+    hr { border: 0; border-top: 1px solid var(--line); margin: 1.2rem 0; }
+  </style>
+</head>
+<body>
+  <div class="gate" id="loading"><p class="muted">Loading…</p></div>
+
+  <div class="gate" id="setup" hidden>
+    <div class="gate-card">
+      <img src="/images/profile.webp" alt="" />
+      <h1>Admin isn't switched on yet</h1>
+      <p class="muted">One step is needed in Cloudflare before anyone can log in. No password exists until it's added there.</p>
+      <ol>
+        <li>Cloudflare dashboard → <b>Workers &amp; Pages</b> → <b>collectorgian</b> → <b>Settings</b> → <b>Variables and Secrets</b> → <b>Add</b></li>
+        <li>Type: <b>Secret</b> · Name: <code>ADMIN_PASSWORD</code></li>
+        <li>Value: a password of at least 10 characters → <b>Deploy</b></li>
+        <li>Come back here and refresh.</li>
+      </ol>
+      <a class="btn" href="/">← Back to the site</a>
+    </div>
+  </div>
+
+  <div class="gate" id="login" hidden>
+    <form class="gate-card" id="loginForm">
+      <img src="/images/profile.webp" alt="" />
+      <h1>Seller login</h1>
+      <input type="text" name="username" value="gian" autocomplete="username" hidden />
+      <input type="password" id="pw" autocomplete="current-password" placeholder="Password" required />
+      <button class="btn gold" id="loginBtn">Log in</button>
+      <p class="msg" id="loginMsg"></p>
+      <a class="muted" href="/">← Back to the site</a>
+    </form>
+  </div>
+
+  <div id="app" hidden>
+    <div class="top"><div class="wrap">
+      <div class="bar"><img src="/images/profile.webp" alt="" /><b>Gian's Admin</b><span class="state" id="state">Saved ✓</span><a class="btn sm" href="/" target="_blank" rel="noopener">Site ↗</a><button class="btn sm" id="logout">Log out</button></div>
+      <div class="tabs" id="tabs"><button data-t="listings">Listings</button><button data-t="events">Shows</button><button data-t="deals">Deals</button><button data-t="info">Site info</button></div>
+    </div></div>
+    <main class="wrap" id="view"></main>
+  </div>
+
+  <div class="sheet" id="sheet" hidden>
+    <div class="sheet-bar"><div class="wrap"><h2 id="sheetTitle"></h2><button class="btn gold sm" id="sheetDone">Done</button></div></div>
+    <div class="wrap sheet-body" id="sheetBody"></div>
+  </div>
+
+  <script src="admin.js?v=1794716578"></script>
+</body>
+</html>
