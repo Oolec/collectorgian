@@ -71,7 +71,8 @@
       "price": 85,
       "status": "Available",
       "hp": 330,
-      "image": ""
+      "image": "https://images.pokemontcg.io/sv3/223_hires.png",
+      "imageKind": "reference"
     },
     {
       "id": 2,
@@ -84,7 +85,8 @@
       "price": 1450,
       "status": "Available",
       "hp": 310,
-      "image": ""
+      "image": "https://images.pokemontcg.io/swsh7/215_hires.png",
+      "imageKind": "reference"
     },
     {
       "id": 3,
@@ -97,7 +99,8 @@
       "price": 520,
       "status": "Pending",
       "hp": 60,
-      "image": ""
+      "image": "https://images.pokemontcg.io/svp/085_hires.png",
+      "imageKind": "reference"
     },
     {
       "id": 4,
@@ -120,7 +123,8 @@
       "price": 340,
       "status": "Available",
       "hp": 320,
-      "image": ""
+      "image": "https://images.pokemontcg.io/swsh8/271_hires.png",
+      "imageKind": "reference"
     },
     {
       "id": 6,
@@ -133,7 +137,8 @@
       "price": 690,
       "status": "Sold",
       "hp": 220,
-      "image": ""
+      "image": "https://images.pokemontcg.io/swsh12/186_hires.png",
+      "imageKind": "reference"
     },
     {
       "id": 7,
@@ -156,19 +161,21 @@
       "price": 410,
       "status": "Available",
       "hp": 320,
-      "image": ""
+      "image": "https://images.pokemontcg.io/swsh7/218_hires.png",
+      "imageKind": "reference"
     },
     {
       "id": 9,
       "name": "Mew ex",
-      "set": "151 · Special Illustration Rare",
+      "set": "151 · Full Art",
       "type": "psychic",
       "category": "Singles",
       "condition": "Near Mint",
       "price": 95,
       "status": "Available",
       "hp": 180,
-      "image": ""
+      "image": "https://images.pokemontcg.io/sv3pt5/193_hires.png",
+      "imageKind": "reference"
     },
     {
       "id": 10,
@@ -181,7 +188,8 @@
       "price": 380,
       "status": "Available",
       "hp": 100,
-      "image": ""
+      "image": "https://images.pokemontcg.io/base1/2_hires.png",
+      "imageKind": "reference"
     },
     {
       "id": 11,
@@ -197,14 +205,15 @@
     {
       "id": 12,
       "name": "Leafeon VSTAR",
-      "set": "Crown Zenith · Gold",
+      "set": "Crown Zenith · Galarian Gallery",
       "type": "grass",
       "category": "Singles",
       "condition": "Near Mint",
       "price": 60,
       "status": "Available",
       "hp": 260,
-      "image": ""
+      "image": "https://images.pokemontcg.io/swsh12pt5gg/GG35_hires.png",
+      "imageKind": "reference"
     }
   ],
   "deals": [
