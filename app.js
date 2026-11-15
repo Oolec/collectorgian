@@ -41,7 +41,7 @@ function card(l, slab = true) {
     inner = `<div class="sealed">${l.image ? `<img src="${esc(l.image)}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">` : `<div><em>${ICON[l.type] || "📦"}</em><strong>${esc(l.name)}</strong></div>`}${fx}</div>`;
   } else {
     const face = l.image
-      ? `<div class="card photo"><img src="${esc(l.image)}" alt="${esc(l.name)}" loading="lazy">${fx}</div>`
+      ? `<div class="card photo${l.imageKind === "reference" ? " reference" : ""}"><img src="${esc(l.image)}" alt="${esc(l.name)}${l.imageKind === "reference" ? " card artwork" : ""}" loading="lazy" style="${l.imageKind === "reference" ? "object-fit:contain" : ""}">${fx}</div>`
       : `<div class="card"><div class="card-in"><div class="c-top"><b>${esc(l.name)}</b>${l.hp ? `<span>${l.hp} HP</span>` : ""}</div><div class="c-art"><span>${ICON[l.type] || "✨"}</span></div><div class="c-bot"><span>${setName}</span><span>★★★</span></div></div>${fx}</div>`;
     inner = slab && l.category === "Graded" && !l.image
       ? `<div class="slab"><div class="slab-label"><span>${esc(l.name)}<small>${setName}</small></span><b>${esc(l.grade || "")}</b></div>${face}</div>` : face;
@@ -127,7 +127,7 @@ function openListing(id) {
     <div class="visual">${card(l)}</div>
     <div>
       <span class="badge ${l.status}">${l.status}</span>
-      <h3>${esc(l.name)}</h3><p class="muted">${esc(l.set)}</p>
+      <h3>${esc(l.name)}</h3><p class="muted">${esc(l.set)}</p>${l.imageKind === "reference" ? "<small>Reference card image. Ask Gian for photos of the actual copy.</small>" : ""}
       <dl class="spec"><dt>Category</dt><dd>${esc(l.category)}</dd><dt>Condition</dt><dd>${esc(l.condition)}</dd>${l.grade ? `<dt>Grade</dt><dd>${esc(l.grade)}</dd>` : ""}<dt>Type</dt><dd>${ICON[l.type] || ""} ${esc(l.type)}</dd></dl>
       <span class="price">${money(l.price)}</span>
       <button class="btn ${sold ? "btn-glass" : "btn-gold"}" id="claim">${sold ? "Ask about similar cards" : "Claim it — DM Gian"}</button>
